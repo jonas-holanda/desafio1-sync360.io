@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1 - Sync360.io</title>
+    <link rel="shortcut icon" href="./assets/images/379494_coding_html_icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-white min-vh-100">
+    <nav class="navbar navbar-expand-md bg-light p-3">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDesafio" aria-controls="navbarDesafio" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <span class="navbar-brand text-info">Desafio 1 - Sync360.io</span>
+          <div class="collapse navbar-collapse" id="navbarDesafio">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><span class="iconify-inline me-1" data-icon="line-md:home"></span>Home</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"> 
+                    <a class="nav-link" href="https://www.github.com/jonas-holanda" target="_blank"><span class="iconify-inline me-1" data-icon="line-md:github-loop"></span>Github</a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="https://www.instagram.com/_jonasholanda" target="_blank"><span class="iconify-inline me-1" data-icon="line-md:instagram"></span>Instagram</a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="https://www.linkedin.com/in/jonas-holanda/" target="_blank"><span class="iconify-inline me-1" data-icon="line-md:linkedin"></span>Linkedin</a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="mailto:jonasholanda15@gmail.com" target="_blank"><span class="iconify-inline me-1" data-icon="line-md:email-twotone"></span>Contato</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- <section class="container-fluid border border-primary"> -->
+    <section class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <div class="card border-2 border-info mb-2 rounded-4">
+                    <div class="card-body">
+                        <h2 class="card-title text-center"><span class="iconify-inline" data-icon="line-md:clipboard-list"></span> Dados do Usuário</h2>
+                        <div class="text-center m-1 d-flex flex-column align-items-center">
+                            <img src="https://avatars.githubusercontent.com/u/138180385" alt="imagem do usuário" class="rounded-circle img-fluid mb-2" id="imagem-user">
+                            <ul class="list-group list-group-horizontal ">
+                                <li class="list-group-item d-flex align-items-center justify-content-start border-0 me-2 flex-wrap">
+                                    <span class="iconify-inline me-1" data-icon="line-md:person-twotone"></span>
+                                    <span class="me-2"><strong>Nome:</strong></span>
+                                    <span class="info-user" id="nome-user">Jonas Holanda</span>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center justify-content-start border-0 flex-wrap">
+                                    <span class="iconify-inline me-1" data-icon="ph:list-numbers"></span>
+                                    <span class="me-2"><strong>Idade:</strong></span>
+                                    <span class="info-user" id="idade-user">24</span>
+                                </li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal ">
+                                <li class="list-group-item d-flex align-items-center justify-content-start border-0 flex-wrap">
+                                    <p>
+                                        <span class="iconify-inline me-1" data-icon="line-md:map-marker-alt"></span>
+                                        <span class="me-2"><strong>Endereço:</strong></span>
+                                        <span class="info-user me-1" id="rua-user" title="Rua">Rua X</span>,
+                                        <span class="info-user me-1" id="bairro-user" title="Bairro">Bairro Y</span>,
+                                        <span class="info-user me-1" id="num_casa-user" title="Número da casa">123</span>,
+                                        <span class="info-user me-1" id="cidade-user" title="Cidade">Sobral</span>-
+                                        <span class="info-user me-1" id="estado-user" title="Estado">CE</span>,
+                                        <span class="info-user" id="cep-user" title="CEP">12345-678</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal mb-3">
+                                <li class="list-group-item d-flex align-items-center justify-content-start border-0 flex-wrap">
+                                    <p>
+                                        <span class="iconify-inline me-1" data-icon="line-md:coffee-half-empty-twotone-loop"></span>
+                                        <span class="me-2"><strong>Biografia:</strong></span>
+                                        <span class="info-user" id="bio-user">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorem, necessitatibus libero maxime vel ratione harum in cumque dolor ex debitis porro sunt voluptatum deserunt perspiciatis voluptas facere et quae.</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-primary rounded-4" id="chamaModal" data-bs-toggle="modal" data-bs-target="#editar" ><span class="iconify-inline me-1" data-icon="line-md:pencil-twotone"></span> Editar dados do Usuário</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="editar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border border-2 border-info">
+                <div class="modal-header bg-info font-color-white">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Editar Usuário</h1>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <form action="#" method="POST" id="form-editar" novalidate>
+                    <div class="modal-body">
+                        <div class="row">
+
+                        <div class="col-md-12">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:person-twotone"></span>Nome:</span>
+                                <input type="text" class="form-control" placeholder="Nome" name="nome_user-form">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="input-group mb-3 col-6">
+                                <span class="input-group-text iconify" id="basic-addon1"><span class="iconify-inline me-1" data-icon="ph:list-numbers"></span>Idade:</span>
+                                <input type="number" class="form-control" placeholder="Idade" name="idade_user-form" min="0" max="200">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:map-marker-alt"></span>CEP:</span>
+                                <input type="text" class="form-control" placeholder="Cep" name="cep_user-form" maxlength="9">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:map-marker-alt"></span>Rua:</span>
+                                <input type="text" class="form-control" placeholder="Rua" name="rua_user-form">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:map-marker-alt"></span>Bairro:</span>
+                                <input type="text" class="form-control" placeholder="Bairro" name="bairro_user-form">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:map-marker-alt"></span>Num Casa:</span>
+                                <input type="number" class="form-control" placeholder="Número da Casa" name="num_user-form" min="0">
+                            </div>
+                        </div>
+
+                        <div class="col-md-7">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:map-marker-alt"></span>Cidade:</span>
+                                <input type="text" class="form-control" placeholder="Cidade" name="cidade_user-form">
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:map-marker-alt"></span>UF:</span>
+                                <input type="text" class="form-control" placeholder="Estado" name="estado_user-form">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:image-twotone"></span>Link Imagem:</span>
+                                <input type="text" class="form-control" placeholder="Link da Imagem" name="imagem_user-form">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><span class="iconify-inline me-1" data-icon="line-md:coffee-half-empty-twotone-loop"></span>Biografia</span>
+                                <textarea class="form-control" name="bio_user-form" placeholder="Biografia"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="submit" class="btn btn-primary" type="button"><span class="iconify-inline me-1" data-icon="line-md:clipboard-check"></span> Atualizar</button>
+                    <button type="reset" class="btn btn-danger" type="button" data-bs-dismiss="modal"><span class="iconify-inline me-1" data-icon="icon-park-outline:close-one"></span>Fechar</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
