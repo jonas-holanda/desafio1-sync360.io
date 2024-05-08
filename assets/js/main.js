@@ -99,3 +99,32 @@ document.querySelector('#chamaModal').addEventListener('click', () => {
         
     }
 });
+
+state.formValues.cepUser.addEventListener('keyup', (event) => {
+    fetchCep(event.target.value);
+})
+
+const fetchCep = async (cep) => {
+
+    let cepValidado = cep.replace(/[^0-9]/g,'');
+
+    if (cepValidado.length === 8) {
+        const url = `https://viacep.com.br/ws/${cepValidado}/json/`;
+
+        const response = await fetch(url);
+        
+        if (response.status === 200) {
+            const data = await response.json();
+
+            state.formValues.ruaUser.value = data.logradouro;
+            state.formValues.bairroUser.value = data.bairro;
+            state.formValues.cidadeUser.value = data.localidade;
+            state.formValues.estadoUser.value = data.uf;
+            state.formValues.cepUser.value = data.cep;
+
+        }
+    } else {
+        return;
+    }
+
+}
