@@ -114,13 +114,15 @@ const fetchCep = async (cep) => {
         const response = await fetch(url);
         
         if (response.status === 200) {
-            const data = await response.json();
 
-            state.formValues.ruaUser.value = data.logradouro;
-            state.formValues.bairroUser.value = data.bairro;
-            state.formValues.cidadeUser.value = data.localidade;
-            state.formValues.estadoUser.value = data.uf;
-            state.formValues.cepUser.value = data.cep;
+                const data = await response.json();
+                if (!(data.erro == true)) {
+                    state.formValues.ruaUser.value = data.logradouro;
+                    state.formValues.bairroUser.value = data.bairro;
+                    state.formValues.cidadeUser.value = data.localidade;
+                    state.formValues.estadoUser.value = data.uf;
+                    state.formValues.cepUser.value = data.cep;
+                }
 
         }
     } else {
